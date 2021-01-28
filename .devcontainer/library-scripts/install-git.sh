@@ -1,9 +1,7 @@
-#!/bin/bashRUN sudo apt update
+#!/usr/bin/env bash
 
 GIT_VERSION=${1:-"2.30.0"}
 
-apt-get update
-export DEBIAN_FRONTEND=noninteractive
 apt-get -y install --no-install-recommends make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
 cd /usr/src
 wget https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz -O git.tar.gz
