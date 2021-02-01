@@ -54,13 +54,13 @@ COPY library-scripts/bazel-debian.sh /tmp/library-scripts/
 RUN if [ "$INSTALL_BAZEL" = "true" ]; then bash /tmp/library-scripts/bazel-debian.sh; fi \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
-# Install Bazel
-ARG INSTALL_GIT="true"
-ARG GIT_VERSION="latest"
+# Install Git
+# ARG INSTALL_GIT="true"
+# ARG GIT_VERSION="latest"
 
-COPY library-scripts/git-from-src-debian.sh /tmp/library-scripts/
-RUN if [ "$INSTALL_GIT" = "true" ]; then bash /tmp/library-scripts/git-from-src-debian.sh; fi \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+# COPY library-scripts/git-from-src-debian.sh /tmp/library-scripts/
+# RUN if [ "$INSTALL_GIT" = "true" ]; then bash /tmp/library-scripts/git-from-src-debian.sh; fi \
+#     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # Install Act (github actions locally)
 ARG INSTALL_ACT="true"
